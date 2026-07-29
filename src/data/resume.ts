@@ -2,7 +2,8 @@ export const profile = {
   name: "DEESHNA J SHETTY",
   title: "ACCA STUDENT · FINANCE & DATA",
   summary:
-    "ACCA student with a strong foundation in accounting, finance, and auditing principles. Skilled in financial analysis, problem-solving, and working with accounting tools and spreadsheets. Quick learner with strong attention to detail, communication skills, and the ability to work effectively in team environments. Seeking an internship opportunity to apply academic knowledge, gain practical industry exposure, and contribute to organizational growth.",
+    "Motivated B.Com student pursuing ACCA and a Minor in FinTech, with a strong foundation in accounting, finance, auditing, and data analytics. Proficient in Excel, Power BI, R, and financial analysis, with an interest in leveraging data-driven insights to support business decision-making. A quick learner with excellent analytical, problem-solving, and communication skills, seeking opportunities to gain industry experience and contribute to organizational success.
+",
 };
 
 export type Experience = {
