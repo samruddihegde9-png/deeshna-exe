@@ -1,0 +1,162 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-pixel: "Press Start 2P", "VT323", ui-monospace, monospace;
+  --font-mono: "VT323", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-hot: var(--hot);
+  --color-hot-foreground: var(--hot-foreground);
+  --color-frame: var(--frame);
+  --color-frame-deep: var(--frame-deep);
+}
+
+:root {
+  --radius: 0.25rem;
+  /* Pink dream palette */
+  --background: oklch(0.94 0.05 340);
+  --foreground: oklch(0.35 0.15 340);
+  --card: oklch(0.97 0.035 340);
+  --card-foreground: oklch(0.32 0.15 340);
+  --popover: oklch(0.97 0.035 340);
+  --popover-foreground: oklch(0.32 0.15 340);
+  --primary: oklch(0.68 0.24 350);
+  --primary-foreground: oklch(0.98 0.01 340);
+  --secondary: oklch(0.88 0.08 340);
+  --secondary-foreground: oklch(0.32 0.15 340);
+  --muted: oklch(0.9 0.05 340);
+  --muted-foreground: oklch(0.5 0.12 340);
+  --accent: oklch(0.82 0.14 320);
+  --accent-foreground: oklch(0.25 0.15 340);
+  --hot: oklch(0.66 0.28 355);
+  --hot-foreground: oklch(0.98 0.01 340);
+  --frame: oklch(0.7 0.22 340);
+  --frame-deep: oklch(0.32 0.18 340);
+  --border: oklch(0.62 0.2 340);
+  --input: oklch(0.85 0.08 340);
+  --ring: oklch(0.68 0.24 350);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 340);
+}
+
+.dark {
+  --background: oklch(0.16 0.06 320);
+  --foreground: oklch(0.9 0.08 340);
+  --card: oklch(0.22 0.09 320);
+  --card-foreground: oklch(0.92 0.06 340);
+  --popover: oklch(0.22 0.09 320);
+  --popover-foreground: oklch(0.92 0.06 340);
+  --primary: oklch(0.72 0.26 350);
+  --primary-foreground: oklch(0.12 0.05 320);
+  --secondary: oklch(0.3 0.12 320);
+  --secondary-foreground: oklch(0.9 0.08 340);
+  --muted: oklch(0.25 0.1 320);
+  --muted-foreground: oklch(0.7 0.08 340);
+  --accent: oklch(0.4 0.18 300);
+  --accent-foreground: oklch(0.95 0.06 340);
+  --hot: oklch(0.72 0.28 355);
+  --hot-foreground: oklch(0.12 0.05 320);
+  --frame: oklch(0.55 0.2 340);
+  --frame-deep: oklch(0.85 0.15 340);
+  --border: oklch(0.45 0.18 340);
+  --input: oklch(0.28 0.1 320);
+  --ring: oklch(0.72 0.26 350);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { font-family: var(--font-pixel); image-rendering: pixelated; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    background-image:
+      radial-gradient(circle at 10% 20%, oklch(0.98 0.03 340 / 0.6) 0, transparent 40%),
+      radial-gradient(circle at 90% 80%, oklch(0.85 0.12 320 / 0.5) 0, transparent 40%);
+  }
+  h1,h2,h3,h4 { font-family: var(--font-pixel); letter-spacing: 0.02em; }
+  p, span, li, a, button, input, textarea { font-family: var(--font-mono); font-size: 1.15rem; line-height: 1.35; }
+  .pixel { font-family: var(--font-pixel); }
+}
+
+@utility pixel-frame {
+  position: relative;
+  border: 3px solid var(--color-frame-deep);
+  box-shadow:
+    0 0 0 3px var(--color-background),
+    0 0 0 6px var(--color-frame-deep),
+    6px 6px 0 6px var(--color-frame);
+  background-color: var(--color-card);
+}
+
+@utility pixel-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--color-frame-deep);
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+@utility pixel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  border: 3px solid var(--color-frame-deep);
+  background-color: var(--color-hot);
+  color: var(--color-hot-foreground);
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--color-frame-deep);
+  transition: transform 80ms ease, box-shadow 80ms ease;
+  cursor: pointer;
+}
+@utility pixel-btn-ghost {
+  @apply pixel-btn;
+  background-color: var(--color-card);
+  color: var(--color-foreground);
+}
+.pixel-btn:hover, .pixel-btn-ghost:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--color-frame-deep); }
+.pixel-btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--color-frame-deep); }
+
+@keyframes blink { 0%, 60% { opacity: 1 } 61%, 100% { opacity: 0 } }
+.caret { display: inline-block; width: 0.6ch; background: currentColor; animation: blink 1s steps(1) infinite; }
+
+@keyframes float-y { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+.float-y { animation: float-y 3s ease-in-out infinite; }
+
+@keyframes sparkle { 0%,100% { opacity: 0.2 } 50% { opacity: 1 } }
+.sparkle { animation: sparkle 2s ease-in-out infinite; }
+
+@keyframes scan { 0% { transform: translateY(-100%) } 100% { transform: translateY(100%) } }
+.scanline::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, oklch(1 0 0 / 0.08) 50%, transparent 100%);
+  animation: scan 3s linear infinite;
+}
