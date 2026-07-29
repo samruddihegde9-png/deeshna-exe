@@ -99,7 +99,7 @@ export function Hero() {
         <div>
           <p className="pixel text-[0.6rem] text-primary">v1.0.0 · DREAM MODE ACTIVE</p>
           <h1 className="pixel mt-3 text-[clamp(2rem,6vw,4.6rem)] leading-none text-primary drop-shadow-[3px_3px_0_var(--color-frame-deep)]">
-            DEESHNA.EXE
+            DEESHNA J SHETTY.EXE
           </h1>
           <p className="pixel mt-3 text-[0.7rem] tracking-widest text-foreground">
             {profile.title}
