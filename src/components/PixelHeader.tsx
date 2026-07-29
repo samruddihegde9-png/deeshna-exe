@@ -5,7 +5,7 @@ export function PixelHeader() {
   return (
     <header className="sticky top-0 z-40 mx-auto mt-4 flex max-w-6xl items-center justify-between gap-4 px-4">
       <div className="pixel-frame flex-1 px-4 py-3">
-        <span className="pixel text-[0.7rem] text-primary">♥ DEESHNA.EXE</span>
+        <span className="pixel text-[0.7rem] text-primary">♥ DEESHNA J SHETTY.EXE</span>
       </div>
       <button
         onClick={() => {
