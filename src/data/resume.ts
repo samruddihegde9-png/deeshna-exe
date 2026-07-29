@@ -95,6 +95,8 @@ export const leadership = [
 export const certifications = [
   "Business Analysis with Microsoft Excel",
   "Python & Pandas for Data Analysis",
+  "Basics of Microsoft Power BI by uniathena",
+  "Leveraging Generative AI for Business Infosys Spring Board",
   "R Programming for Beginners",
 ];
 
